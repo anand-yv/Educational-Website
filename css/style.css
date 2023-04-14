@@ -17,8 +17,8 @@
     --color-white: #fff;
     --color-black: #000;
     --color-bg: #1f2641;
-    --color-bg-bg1: #2e3267;
-    --color-bg-bg2: #424890;
+    --color-bg1: #2e3267;
+    --color-bg2: #424890;
 
     --container-width-lg: 80%;
     --contaiane-width-md: 90%;
@@ -72,6 +72,10 @@ h4{
     font-size: 1.3rem;
 }
 
+a{
+    color: var(--color-white);
+}
+
 img{
     width: 100%;
     display: block;
@@ -96,4 +100,143 @@ img{
 .btn-primary{
     background: var(--color-danger);
     color: var(--color-white);
+}
+
+/* ============================= NAVBAR ================================ */
+nav{
+    background: transparent;
+    width: 100vw;
+    height: 5rem;
+    position: fixed;
+    top: 0;
+    z-index: 11;
+}
+
+/* change navbar styles on scroll using javascript */
+.window-scroll{
+    background: var(--color-primary);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
+}
+
+.nav_container{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav button{
+    display: none;
+}
+
+.nav_menu{
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.nav_menu a{
+    font-size: 0.9em;
+    transition: var(--transition);
+}
+
+.nav_menu a:hover{
+    color: var(--color-bg2)
+}
+
+
+/* ============================= HEADER ================================ */
+header{
+    position: relative;
+    top: 5rem;
+    overflow: hidden;
+    height: 70vh;
+    margin-bottom: 5rem;
+}
+
+.header_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 5rem;
+    height: 100%;
+}
+
+.header_left p{
+    margin: 1rem 0 2.4rem;
+}
+
+
+/* ============================= CATEGORIES ================================ */
+.categories{
+    background: var(--color-bg1);
+    height: 29rem;
+}
+
+.categories h1{
+    line-height: 1;
+    margin-bottom: 3rem;
+}
+
+.categories_container{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    /* gap: 4rem; */
+}
+
+.categories_left{
+    margin-right: 4rem;
+}
+
+.categories_left p{
+    margin: 1rem 0 3rem;
+
+}
+
+.categories_right{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1.2rem;
+}
+
+.category{
+    background: var(--color-bg2);
+    padding: 2rem;
+    border-radius: 2rem;
+    transition: var(--transition);
+}
+
+.category:hover{
+    box-shadow: 0 3rem 3rem rgba(0,0,0,0.3);
+    z-index: 1;
+}
+
+.category:nth-child(2) .category_icon{
+    background: var(--color-danger);
+}
+
+.category:nth-child(3) .category_icon{
+    background: var(--color-success);
+}
+
+.category:nth-child(4) .category_icon{
+    background: var(--color-warning);
+}
+
+.category:nth-child(5) .category_icon{
+    background: var(--color-success);
+}
+
+.category_icon{
+    background: var(--color-primary);
+    padding: 0.7rem;
+    border-radius: 0.9rem;
+}
+
+.category h5{
+    margin: 2rem 0 1rem;
+}
+
+.category p{
+    font-size: 0.85rem;
 }

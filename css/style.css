@@ -21,7 +21,7 @@
     --color-bg2: #424890;
 
     --container-width-lg: 80%;
-    --contaiane-width-md: 90%;
+    --container-width-md: 90%;
     --container-width-sm: 94%;
 
     --transition: all 400ms ease;
@@ -170,7 +170,7 @@ header {
 /* ============================= CATEGORIES ================================ */
 .categories {
     background: var(--color-bg1);
-    height: 30rem;
+    height: 32rem;
 }
 
 .categories h1 {
@@ -352,14 +352,14 @@ header {
     position: relative;
 }
 
-.testimonial_body::before{
-    content:"";
+.testimonial_body::before {
+    content: "";
     display: block;
-    background: linear-gradient(135deg,transparent, var(--color-primary),var(--color-primary),var(--color-primary));
+    background: linear-gradient(135deg, transparent, var(--color-primary), var(--color-primary), var(--color-primary));
     width: 3rem;
     height: 3rem;
     position: absolute;
-    left: 50%;
+    left: 45%;
     top: -1.5rem;
     transform: rotate(45deg);
 }
@@ -368,35 +368,35 @@ header {
 
 
 /* ======================== START FOOTER ======================== */
-footer{
+footer {
     background: var(--color-bg1);
     padding-top: 5rem;
     font-size: 0.9rem;
 }
 
-.footer_container{
+.footer_container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 5rem;
 }
 
-.footer_container > div h4{
+.footer_container>div h4 {
     margin-bottom: 1.2rem;
 }
 
-.footer_1 p{
+.footer_1 p {
     margin: 0 0 2rem;
 }
 
-footer ul li{
+footer ul li {
     margin-bottom: 0.7rem;
 }
 
-footer ul li a:hover{
+footer ul li a:hover {
     text-decoration: underline;
 }
 
-.footer_socials{
+.footer_socials {
     display: flex;
     gap: 1rem;
     font-size: 1.2rem;
@@ -404,11 +404,164 @@ footer ul li a:hover{
 }
 
 
-.footer_copyright{
-    text-align:center;
+.footer_copyright {
+    text-align: center;
     margin-top: 4rem;
     padding: 1.2rem 0;
     border-top: 1px solid var(--color-bg2);
 }
 
 /* ======================== END FOOTER ======================== */
+
+
+/* ============================== MEDIA QUERIES (TABLETS) ========================================= */
+
+@media screen and (max-width:1024px) {
+
+    .container {
+        width: var(--container-width-md);
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    h4 {
+        font-size: 1.2rem;
+    }
+
+    /* ==================== NAV BAR ============================ */
+    nav button {
+        display: inline-block;
+        background: transparent;
+        font-size: 1.8rem;
+        color: var(--color-white);
+        cursor: pointer;
+    }
+
+    nav button#close-menu-btn {
+        display: none;
+    }
+
+    .nav_menu {
+        position: fixed;
+        top: 5rem;
+        right: 5%;
+        height: fit-content;
+        width: 18rem;
+        flex-direction: column;
+        gap: 0;
+        display: none;
+    }
+
+    .nav_menu li {
+        width: 100%;
+        height: 5.8rem;
+        animation: animateNavItems 400ms linear forwards;
+        transform-origin: top right;
+        opacity: 0;
+    }
+
+    .nav_menu li:nth-child(2) {
+        animation-delay: 200ms;
+    }
+
+    .nav_menu li:nth-child(3) {
+        animation-delay: 400ms;
+    }
+
+    .nav_menu li:nth-child(4) {
+        animation-delay: 600ms;
+    }
+
+    @keyframes animateNavItems {
+        0% {
+            transform: rotateZ(-90deg) rotateX(90deg) scale(0.1);
+        }
+
+        100% {
+            transform: rotateZ(0) rotateX(0) scale(1);
+            opacity: 1;
+        }
+    }
+
+    .nav_menu li a {
+        background: var(--color-primary);
+        box-shadow: -4rem 6rem 10rem rgba(0, 0, 0, 0.6);
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+    }
+
+    .nav_menu li a:hover {
+        background: var(--color-bg2);
+    }
+
+
+
+
+    /* ==================== HEADER ============================ */
+    header{
+        height: 52vh;
+        margin-bottom: 4rem;
+    }
+
+    .header_container{
+        gap: 0;
+        padding-bottom: 3rem;
+    }
+
+    /* ================ END HEADER ============================  */
+
+    /* ==================== CATEGORIES ============================ */
+    .categories{
+        height: auto;
+    }
+
+    .categories_container{
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .categories_left{
+        margin-right: 0;
+    }
+
+    /* ================ END CATEGORIES ============================  */
+
+    /* ==================== POPULAR COURSES ============================ */
+    .courses{
+        margin-top: 0;
+    }
+
+    .courses_container{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* ================ END POPULAR COURSES ============================  */
+
+    /* ==================== FAQs ============================ */
+    .faqs_container{
+        grid-template-columns: 1fr;
+    }
+
+    .faq{
+        padding: 1.5rem;
+    }
+
+    /* ================ END FAQs ============================  */
+
+    /* ==================== FOOTER ============================ */
+    .footer_container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
